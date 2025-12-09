@@ -293,34 +293,29 @@ V3.0版本是一个面向所有用户的版本，尤其适合新手用户。它�
     </div>
 <h4>FAQ</h4>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>WinXray 的多出口功能如何使用？</h5></div>
-    <div class="panel-body">
-        WinXray 支持同时配置多个 outbound 节点，并通过路由规则或策略组选择不同出口。这样可以根据流量类型或目的地自动选择节点，实现灵活分流和负载均衡。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>WinXray 的多节点分流如何设置？</h5></div>
-    <div class="panel-body">
-        可通过策略组定义不同节点用途和优先级，结合规则文件将特定域名、IP 或端口流量分流至相应节点，实现游戏、视频或网页加速，并优化整体网络性能和稳定性。<hr />    </div>
-</div>
-<div class="panel panel-default">
     <div class="panel-heading"><h5>Clash 如何实现延迟自动切换？</h5></div>
     <div class="panel-body">
         Clash 可以结合策略组和延迟检测功能，自动选择延迟最低的节点。保证网页、视频和游戏流量通过最优节点，提高访问速度和稳定性，减少掉线和卡顿。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>V2RayA 在 Linux 系统中如何开机自启？</h5></div>
-    <div class="panel-body">
-        可通过 systemd 创建启动项或在启动脚本中添加 V2RayA 启动命令。编辑 /etc/systemd/system/v2raya.service 文件并设置 `Restart=always`，执行 `systemctl enable v2raya` 使其随系统自动启动。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>SSR 是否还值得使用？</h5></div>
-    <div class="panel-body">
-        虽然 SSR 的开发早已停止，但由于它配置简单且部分节点仍然兼容，仍有一定使用场景。不过建议用户逐步迁移到更安全的新协议如 VLESS 或 Trojan，以获得更佳性能与隐蔽性。<hr />    </div>
-</div>
-<div class="panel panel-default">
     <div class="panel-heading"><h5>Trojan TLS 伪装如何降低被封锁风险？</h5></div>
     <div class="panel-body">
         通过选择真实可访问的域名并安装有效证书，Trojan 流量可完全模拟 HTTPS 请求。这样可隐藏流量特征，降低被封锁和 DPI 检测的可能性，保证节点长期可用。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>QuantumultX 如何实现按端口和协议分流？</h5></div>
+    <div class="panel-body">
+        QuantumultX 支持按 TCP、UDP、端口及应用协议分流流量，结合策略组选择最优节点。这样可以为游戏、视频和广告屏蔽提供最佳网络体验，提高访问速度和稳定性。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>WinXray 的多出口功能如何使用？</h5></div>
+    <div class="panel-body">
+        WinXray 支持同时配置多个 outbound 节点，并通过路由规则或策略组选择不同出口。这样可以根据流量类型或目的地自动选择节点，实现灵活分流和负载均衡。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>V2RayA 在 Linux 系统中如何开机自启？</h5></div>
+    <div class="panel-body">
+        可通过 systemd 创建启动项或在启动脚本中添加 V2RayA 启动命令。编辑 /etc/systemd/system/v2raya.service 文件并设置 `Restart=always`，执行 `systemctl enable v2raya` 使其随系统自动启动。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>Clash 的策略组如何提升分流效率？</h5></div>
@@ -333,14 +328,19 @@ V3.0版本是一个面向所有用户的版本，尤其适合新手用户。它�
         使用 Wireshark 抓取对应网卡流量，结合过滤器（例如 host <server_ip> 或 tcp.port==<port>）分析握手与数据包内容。注意 TLS/QUIC 流量为加密内容，仅能通过元信息（时延、丢包）判断异常，不要尝试解密用户隐私。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Clash 的策略组可设置延迟阈值吗？</h5></div>
+    <div class="panel-heading"><h5>WinXray 的多节点分流如何设置？</h5></div>
     <div class="panel-body">
-        可以。用户可定义延迟阈值，当节点延迟超过设定值时，策略组会自动切换至其他低延迟节点，提高网络速度和稳定性，优化访问体验。<hr />    </div>
+        可通过策略组定义不同节点用途和优先级，结合规则文件将特定域名、IP 或端口流量分流至相应节点，实现游戏、视频或网页加速，并优化整体网络性能和稳定性。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>QuantumultX 如何实现按端口和协议分流？</h5></div>
+    <div class="panel-heading"><h5>SSR 是否还值得使用？</h5></div>
     <div class="panel-body">
-        QuantumultX 支持按 TCP、UDP、端口及应用协议分流流量，结合策略组选择最优节点。这样可以为游戏、视频和广告屏蔽提供最佳网络体验，提高访问速度和稳定性。    </div>
+        虽然 SSR 的开发早已停止，但由于它配置简单且部分节点仍然兼容，仍有一定使用场景。不过建议用户逐步迁移到更安全的新协议如 VLESS 或 Trojan，以获得更佳性能与隐蔽性。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Clash 的策略组可设置延迟阈值吗？</h5></div>
+    <div class="panel-body">
+        可以。用户可定义延迟阈值，当节点延迟超过设定值时，策略组会自动切换至其他低延迟节点，提高网络速度和稳定性，优化访问体验。    </div>
 </div>
 <div class="panel panel-default mt-5">
     <div class="panel-heading">
@@ -369,16 +369,16 @@ V3.0版本是一个面向所有用户的版本，尤其适合新手用户。它�
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/free-nodes/2025-11-2-clash-node-github.htm" title="机场分享 | 11月2日21.6M/S|免费V2ray节点/Clash节点/Shadowrocket节点/Singbox节点/SSR节点机场推荐，在线Clash机场梯子购买推荐">机场分享 | 11月2日21.6M/S|免费V2ray节点/Clash节点/Shadowrocket节点/Singbox节点/SSR节点机场推荐，在线Clash机场梯子购买推荐</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-10-15-clash-verge-rev-node-github.htm" title="机场分享 | 10月15日20M/S|免费Singbox节点/SSR节点/Shadowrocket节点/V2ray节点/Clash节点机场推荐，在线Clash机场梯子购买推荐">机场分享 | 10月15日20M/S|免费Singbox节点/SSR节点/Shadowrocket节点/V2ray节点/Clash节点机场推荐，在线Clash机场梯子购买推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-11-11-clash-stash.htm" title="机场分享 | 11月11日18.8M/S|免费Shadowrocket节点/Clash节点/Singbox节点/SSR节点/V2ray节点机场推荐，在线Clash机场梯子购买推荐">机场分享 | 11月11日18.8M/S|免费Shadowrocket节点/Clash节点/Singbox节点/SSR节点/V2ray节点机场推荐，在线Clash机场梯子购买推荐</a></li>
                         <li class="py-2"><a href="/free-nodes/2025-11-7-clash-verge-rev-nodes.htm" title="机场分享 | 11月7日21.8M/S|免费V2ray节点/SSR节点/Singbox节点/Shadowrocket节点/Clash节点机场推荐，在线Clash机场梯子购买推荐">机场分享 | 11月7日21.8M/S|免费V2ray节点/SSR节点/Singbox节点/Shadowrocket节点/Clash节点机场推荐，在线Clash机场梯子购买推荐</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-11-6-clash-verge-rev-nodes.htm" title="机场分享 | 11月6日22M/S|免费V2ray节点/Shadowrocket节点/SSR节点/Singbox节点/Clash节点机场推荐，在线Clash机场梯子购买推荐">机场分享 | 11月6日22M/S|免费V2ray节点/Shadowrocket节点/SSR节点/Singbox节点/Clash节点机场推荐，在线Clash机场梯子购买推荐</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-10-14-clash-stash-node.htm" title="机场分享 | 10月14日19.4M/S|免费Shadowrocket节点/Singbox节点/SSR节点/Clash节点/V2ray节点机场推荐，在线Clash机场梯子购买推荐">机场分享 | 10月14日19.4M/S|免费Shadowrocket节点/Singbox节点/SSR节点/Clash节点/V2ray节点机场推荐，在线Clash机场梯子购买推荐</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-11-1-clash-verge-rev-nodes.htm" title="机场分享 | 11月1日22.4M/S|免费Shadowrocket节点/Clash节点/Singbox节点/V2ray节点/SSR节点机场推荐，在线Clash机场梯子购买推荐">机场分享 | 11月1日22.4M/S|免费Shadowrocket节点/Clash节点/Singbox节点/V2ray节点/SSR节点机场推荐，在线Clash机场梯子购买推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-12-7-clash-node-daily-updates.htm" title="机场分享 | 12月7日20.4M/S|免费Singbox节点/V2ray节点/Clash节点/Shadowrocket节点/SSR节点机场推荐，在线Clash机场梯子购买推荐">机场分享 | 12月7日20.4M/S|免费Singbox节点/V2ray节点/Clash节点/Shadowrocket节点/SSR节点机场推荐，在线Clash机场梯子购买推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-12-3-clash-verge-rev-node-github.htm" title="机场分享 | 12月3日18M/S|免费V2ray节点/Singbox节点/Shadowrocket节点/SSR节点/Clash节点机场推荐，在线Clash机场梯子购买推荐">机场分享 | 12月3日18M/S|免费V2ray节点/Singbox节点/Shadowrocket节点/SSR节点/Clash节点机场推荐，在线Clash机场梯子购买推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-11-19-clash-meta-github.htm" title="机场分享 | 11月19日19.4M/S|免费Clash节点/SSR节点/Singbox节点/Shadowrocket节点/V2ray节点机场推荐，在线Clash机场梯子购买推荐">机场分享 | 11月19日19.4M/S|免费Clash节点/SSR节点/Singbox节点/Shadowrocket节点/V2ray节点机场推荐，在线Clash机场梯子购买推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-11-30-clash-meta-github.htm" title="机场分享 | 11月30日19.1M/S|免费Singbox节点/Shadowrocket节点/Clash节点/V2ray节点/SSR节点机场推荐，在线Clash机场梯子购买推荐">机场分享 | 11月30日19.1M/S|免费Singbox节点/Shadowrocket节点/Clash节点/V2ray节点/SSR节点机场推荐，在线Clash机场梯子购买推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-12-1-clash-node-github.htm" title="机场分享 | 12月1日21.6M/S|免费V2ray节点/Shadowrocket节点/Singbox节点/SSR节点/Clash节点机场推荐，在线Clash机场梯子购买推荐">机场分享 | 12月1日21.6M/S|免费V2ray节点/Shadowrocket节点/Singbox节点/SSR节点/Clash节点机场推荐，在线Clash机场梯子购买推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-12-5-clash-verge-rev-node-github.htm" title="机场分享 | 12月5日19.4M/S|免费Singbox节点/SSR节点/Shadowrocket节点/Clash节点/V2ray节点机场推荐，在线Clash机场梯子购买推荐">机场分享 | 12月5日19.4M/S|免费Singbox节点/SSR节点/Shadowrocket节点/Clash节点/V2ray节点机场推荐，在线Clash机场梯子购买推荐</a></li>
                         <li class="py-2"><a href="/free-nodes/2025-11-8-node-share.htm" title="机场分享 | 11月8日22.4M/S|免费Shadowrocket节点/Clash节点/SSR节点/V2ray节点/Singbox节点机场推荐，在线Clash机场梯子购买推荐">机场分享 | 11月8日22.4M/S|免费Shadowrocket节点/Clash节点/SSR节点/V2ray节点/Singbox节点机场推荐，在线Clash机场梯子购买推荐</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-10-10-clash-v2ray-ss-ssr.htm" title="机场分享 | 10月10日19.8M/S|免费Clash节点/V2ray节点/Shadowrocket节点/SSR节点/Singbox节点机场推荐，在线Clash机场梯子购买推荐">机场分享 | 10月10日19.8M/S|免费Clash节点/V2ray节点/Shadowrocket节点/SSR节点/Singbox节点机场推荐，在线Clash机场梯子购买推荐</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-10-13-clash-node-github.htm" title="机场分享 | 10月13日20.8M/S|免费Singbox节点/SSR节点/V2ray节点/Shadowrocket节点/Clash节点机场推荐，在线Clash机场梯子购买推荐">机场分享 | 10月13日20.8M/S|免费Singbox节点/SSR节点/V2ray节点/Shadowrocket节点/Clash节点机场推荐，在线Clash机场梯子购买推荐</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-12-2-clash-meta-github.htm" title="机场分享 | 12月2日22.5M/S|免费Singbox节点/V2ray节点/Clash节点/SSR节点/Shadowrocket节点机场推荐，在线Clash机场梯子购买推荐">机场分享 | 12月2日22.5M/S|免费Singbox节点/V2ray节点/Clash节点/SSR节点/Shadowrocket节点机场推荐，在线Clash机场梯子购买推荐</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-11-9-clash-stash.htm" title="机场分享 | 11月9日20.7M/S|免费V2ray节点/Shadowrocket节点/Clash节点/SSR节点/Singbox节点机场推荐，在线Clash机场梯子购买推荐">机场分享 | 11月9日20.7M/S|免费V2ray节点/Shadowrocket节点/Clash节点/SSR节点/Singbox节点机场推荐，在线Clash机场梯子购买推荐</a></li>
                     </ul>
     </div>
 </div>
@@ -390,13 +390,10 @@ V3.0版本是一个面向所有用户的版本，尤其适合新手用户。它�
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">2</span> <a href="/date/2025-12/" title="2025-12 归档">2025-12</a></h4>
+                <h4><span class="badge" style="float: right;">9</span> <a href="/date/2025-12/" title="2025-12 归档">2025-12</a></h4>
             </li>
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">27</span> <a href="/date/2025-11/" title="2025-11 归档">2025-11</a></h4>
-            </li>
-                        <li class="py-2">
-                <h4><span class="badge" style="float: right;">26</span> <a href="/date/2025-10/" title="2025-10 归档">2025-10</a></h4>
+                <h4><span class="badge" style="float: right;">23</span> <a href="/date/2025-11/" title="2025-11 归档">2025-11</a></h4>
             </li>
                     </ul>
     </div>
